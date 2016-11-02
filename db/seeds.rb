@@ -5,3 +5,12 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+10.times do
+  task = Task.new
+  task.name = Faker::Hipster.word
+  task.complete = [true, false].sample
+  task.importance = (1..5).to_a.sample
+  task.save!
+end
+
